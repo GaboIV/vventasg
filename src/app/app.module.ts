@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login/login.component';
 import { RegistroComponent } from './login/registro/registro.component';
 import { CompartidoModule } from './compartido/compartido.module';
 import { PaginasComponent } from './paginas/paginas.component';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PaginasComponent } from './paginas/paginas.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    CompartidoModule
+    CompartidoModule,
+    APP_ROUTES
   ],
   providers: [],
   bootstrap: [AppComponent]
