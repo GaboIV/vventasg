@@ -6,7 +6,7 @@
  */
 
 
-$(document).ready(function () {
+function init_plugins() {
 
 
     // Fast fix bor position issue with Propper.js
@@ -145,7 +145,7 @@ $(document).ready(function () {
     $('.full-height-scroll').slimscroll({
         height: '100%'
     })
-});
+}
 
 // Minimalize menu when screen is less than 768px
 $(window).bind(" resize", function () {

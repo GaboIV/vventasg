@@ -5,7 +5,8 @@ import { NoencontradoComponent } from './compartido/noencontrado/noencontrado.co
 const appRoutes: Routes = [
     {
         path: '',
-        component: PaginasComponent
+        component: PaginasComponent,
+        loadChildren: './paginas/paginas.module#PaginasModule'
     },
     { path: '**', component: NoencontradoComponent }
 ];
