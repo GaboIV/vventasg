@@ -6,7 +6,10 @@ const appRoutes: Routes = [
     {
         path: '',
         component: PaginasComponent,
-        loadChildren: './paginas/paginas.module#PaginasModule'
+        loadChildren: './paginas/paginas.module#PaginasModule',
+        data: { 
+            titulo: 'Panel Principal',
+        }
     },
     { path: '**', component: NoencontradoComponent }
 ];

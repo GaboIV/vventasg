@@ -4647,6 +4647,7 @@ body.body-small .footer.fixed {
 .page-heading {
   border-top: 0;
   padding: 0 10px 20px 10px;
+  margin: 0px;
 }
 .panel-heading h1,
 .panel-heading h2 {
@@ -4857,9 +4858,9 @@ img.circle-border {
   cursor: move;
 }
 .breadcrumb {
-  background-color: #ffffff;
+  background-color: transparent;
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 .breadcrumb > li a {
   color: inherit;
@@ -9471,6 +9472,11 @@ body.md-skin {
   height: 100%;
   position: fixed;
   display: none;
+}
+.migas {
+  background: #00b0f0;
+  color: white;
+  padding-bottom: 12px;
 }
 @media (min-width: 768px) {
   #page-wrapper {
