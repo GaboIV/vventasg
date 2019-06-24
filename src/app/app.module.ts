@@ -9,6 +9,7 @@ import { RegistroComponent } from './login/registro/registro.component';
 import { CompartidoModule } from './compartido/compartido.module';
 import { PaginasComponent } from './paginas/paginas.component';
 import { APP_ROUTES } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { APP_ROUTES } from './app.routes';
     FormsModule,
     ReactiveFormsModule,
     CompartidoModule,
+    HttpClientModule,
     APP_ROUTES
   ],
   providers: [],
