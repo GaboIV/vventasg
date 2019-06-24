@@ -4,10 +4,12 @@ import { ProductosComponent } from './productos/productos.component';
 import { CompartidoModule } from '../compartido/compartido.module';
 import { FormsModule } from '@angular/forms';
 import { PAGINAS_ROUTES } from './paginas.routes';
+import { PanelPrincipalComponent } from './panel-principal/panel-principal.component';
 
 @NgModule({
   declarations: [
-    ProductosComponent
+    ProductosComponent,
+    PanelPrincipalComponent
   ],
   imports: [
     CommonModule,

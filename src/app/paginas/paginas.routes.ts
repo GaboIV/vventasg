@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ProductosComponent } from './productos/productos.component';
+import { PanelPrincipalComponent } from './panel-principal/panel-principal.component';
 
 const paginasRoutes: Routes = [    
     { 
@@ -10,8 +11,15 @@ const paginasRoutes: Routes = [
             rutas: [
                 'Panel Principal', 'Productos'
             ]
-        } 
+        }       
     },
+    { 
+        path: '', 
+        component: PanelPrincipalComponent,
+        data: { 
+            titulo: 'Panel principal'
+        }    
+ }
 ];
 
 export const PAGINAS_ROUTES = RouterModule.forChild( paginasRoutes );

@@ -1,0 +1,51 @@
+/*IMAGEN EN TABLA ARTICULOS*/
+
+.image_th { width: 55%; }
+
+.button_img_th { width: 45%; }
+
+.image_th, .button_img_th { vertical-align: top; display: inline-block; text-align: center; }
+
+.image_th img { width: 100%; }
+
+.button_img_th .agregar_img_th { width: 90%; outline: none; border: none; font-size: 0.80em; padding: 2.5px 0; cursor: pointer; border-radius: 4px; }
+.button_img_th .agregar_img_th:hover { background: #bbaabb; }
+
+.button_img_th .cambiar_th_img { background: #53992D; color: white; }
+.button_img_th .cambiar_th_img:hover { background: #66AF3F; }
+
+.button_img_th .eliminar_th_img { margin-bottom: 2px; background: #CC243B; color: white; }
+.button_img_th .eliminar_th_img:hover { background: #FF2D49; }
+
+#invfrm { display: none; }
+
+/*TABLA DE ARTICULOS*/
+
+.tabla_general select {
+    border: #eae6e6 1px solid;
+    border-radius: 4px;
+}
+
+.id_t_art { font-size: 0.78em; color: #808080; }
+.codigo_t_art { width: 14% !important; position: relative; vertical-align: middle !important; }
+.opciones_c_t_a { position: absolute; top: 27%; right: 10px; font-weight: bold; color: red; font-size: 1.1em; cursor: pointer; padding: 4px; }
+.opciones_c_t_a:hover { font-size: 1.2em; }
+
+.marca_t_art { width: 13% !important; vertical-align: middle !important; }
+.marca_t_art select { width: 100%; }
+.marca_t_art .btn_marca_add { width: 17%; }
+
+.imagen_t_art { width: 12% !important; }
+
+.descr_t_art { width: 27% !important; padding: 4px 2px 2px 10px !important; position: relative; }
+.pres_t_art { display: inline-block; padding: 0px 4px; }
+.titulo_t_art { font-weight: bold; padding: 3px 4px; }
+.dato_t_art { min-width: 50%; padding: 2px; min-height: 22px; vertical-align: middle; font-weight: bold; }
+.span_t_art { font-size: 0.9em; vertical-align: middle; }
+
+.exis_t_art { width: 8% !important; text-align: center; vertical-align: middle !important; }
+
+.grupo_t_art { width: 13% !important; vertical-align: middle !important; }
+.grupo_t_art select { width: 100%; }
+
+.precio_t_art { width: 13% !important; text-align: right; padding-right: 10px !important; cursor: pointer; vertical-align: middle !important; }
