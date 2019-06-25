@@ -10,8 +10,8 @@ import { URL_SERVICIOS } from 'src/app/config/config';
 export class ProductosComponent implements OnInit {
 
   productos: [] = [];
-  paginaSiguiente: number;
-  paginaAnterior: number;
+  paginaSiguiente: string;
+  paginaAnterior: string;
   total: number;
 
   constructor(

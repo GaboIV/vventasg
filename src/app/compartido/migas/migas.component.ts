@@ -12,6 +12,7 @@ export class MigasComponent implements OnInit {
 
   label: string = '';
   rutas: any = '';
+  tituloOriginal = 'Ventas G de Software G v1.3.544 - Base de datos v0.52 ';
 
   constructor(
     private router: Router,
@@ -23,7 +24,7 @@ export class MigasComponent implements OnInit {
 
         this.label = data.titulo;
         this.rutas = data.rutas;
-        this.title.setTitle( this.label );
+        this.title.setTitle( this.tituloOriginal + '- ' + this.label );
 
         let metaTag: MetaDefinition = {
           name: 'description',
