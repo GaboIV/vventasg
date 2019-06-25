@@ -4,8 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login/login.component';
-import { RegistroComponent } from './login/registro/registro.component';
+import { LoginComponent } from './login/login.component';
 import { CompartidoModule } from './compartido/compartido.module';
 import { PaginasComponent } from './paginas/paginas.component';
 import { APP_ROUTES } from './app.routes';
@@ -15,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent,
     PaginasComponent
   ],
   imports: [
