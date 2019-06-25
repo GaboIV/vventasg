@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/servicios/productos/productos.service';
+import { URL_SERVICIOS } from 'src/app/config/config';
 
 @Component({
   selector: 'app-productos',
@@ -27,7 +28,7 @@ export class ProductosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cargarProductos('http://localhost/ventasg/public/api/productos?page=1');
+    this.cargarProductos(URL_SERVICIOS + '/api/productos?page=1');
   }
 
 }
