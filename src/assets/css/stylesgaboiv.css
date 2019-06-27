@@ -1,3 +1,15 @@
+/* FONDO DE PANTALLA LOGIN*/
+
+.bodywall {
+    background: url('../img/wall.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-width: 900px;
+    overflow: hidden;
+}
+
 /*TAMAÑOS EN TABLA*/
 
 .th8  { width: 8% !important; }

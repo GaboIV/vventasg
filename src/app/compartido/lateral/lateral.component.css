@@ -1,3 +1,9 @@
-:host {
-    width: 220px;
+.metismenu {
+    background: #2f4050;
+}
+
+.nav-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
