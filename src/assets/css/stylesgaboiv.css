@@ -72,3 +72,5 @@
 .grupo_t_art select { width: 100%; }
 
 .precio_t_art { width: 13% !important; text-align: right; padding-right: 10px !important; cursor: pointer; vertical-align: middle !important; }
+
+.condato { background: #b3ffae; }

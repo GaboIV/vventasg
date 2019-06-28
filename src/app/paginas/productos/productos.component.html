@@ -51,8 +51,7 @@
                                 </td>
 
                                 <td class="marca_t_art th12">
-                                    <select id="marca_slc-2" name="marca_slc" class="slc_100 marca_slc"
-                                        [(ngModel)]="producto.marca_id">
+                                    <select id="marca_slc-2" name="marca_slc" class="slc_100 marca_slc" [(ngModel)]="producto.marca_id" (change)="actualizarProducto(producto, 'Marca')" [ngClass]="producto.marca_id > 0 ? 'condato' : ''">
                                         <option value="0">Sin marca</option>
                                         <option value="2">BIMBO</option>
                                         <option value="4">GLORIA</option>
@@ -63,7 +62,7 @@
                                 <td class="imagen_t_art th11">
                                     <div id="imagen2">
                                         <div class="image_th" id="image_th2">
-                                            <img src="https://images.squarespace-cdn.com/content/v1/56017959e4b056134c467dd0/1550176454520-Y580KW0T25EIJTC3FMBA/ke17ZwdGBToddI8pDm48kPqQfq0L3n3wpHIsRapTfg8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKczo5Zn4xktlpMsMj-QlHXeMfNK6GwvtVkYEWiR8XAPyD3GfLCe_DXOSC_YcAacWL_/image-not-found.jpg?format=300w"
+                                            <img src="../../../assets/img/image-not-found.jpg"
                                                 id="picture2" class="rounded mx-auto d-block">
                                         </div>
                                         <div class="button_img_th" id="div_botones2">
@@ -92,8 +91,7 @@
                                 <!-- <td></td> -->
                                 <!-- <td></td> -->
                                 <td class="grupo_t_art th13">
-                                    <select id="grupo_slc-2" name="grupo_slc" class="slc_100 grupo_slc"
-                                        [(ngModel)]="producto.grupo_id">
+                                    <select id="grupo_slc-2" name="grupo_slc" class="slc_100 grupo_slc" [(ngModel)]="producto.grupo_id" (change)="actualizarProducto(producto, 'Grupo')" [ngClass]="producto.grupo_id > 0 ? 'condato' : ''">
                                         <option value="0">Sin Grupo</option>
                                         <option value="4">CAFÉ Y ESPECIALIDADES</option>
                                         <option value="10">CARNICERÍA</option>
@@ -111,83 +109,6 @@
                                 <td class="precio_t_art th12" id="td_precio-2">
                                     <input type="hidden" name="input_precio-2">
                                     {{producto.precio1 | number:'1.2'}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <!-- <td class="id_t_art">2</td> -->
-                                <td class="codigo_t_art th14">
-                                    <div class="opciones_c_t_a funciones" id="delete_prod-2">
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="id_t_art">
-                                        #2
-                                    </div>
-                                    <div>
-                                        000000287 </div>
-                                </td>
-
-
-                                <td class="marca_t_art th12">
-                                    <select id="marca_slc-2" name="marca_slc" class="slc_100 marca_slc">
-                                        <option value="0">Sin marca</option>
-                                        <option value="2">BIMBO</option>
-                                        <option value="4">GLORIA</option>
-                                        <option value="3">PLUMROSE</option>
-                                        <option value="1">ZULIA</option>
-                                    </select>
-                                </td>
-                                <td class="imagen_t_art th11">
-                                    <div id="imagen1">
-                                        <div class="image_th">
-                                            <img src="https://tb2cdn.schoolwebmasters.com/accnt_338125/site_338126/Graphics/graphic_body_FoodService.jpg"
-                                                id="picture1" class="rounded">
-                                        </div>
-                                        <div class="button_img_th" id="div_botones000000102">
-                                            <button id="eliminar_img_th-1"
-                                                class="agregar_img_th eliminar_th_img">Elim.</button>
-                                            <button id="cambiar_img_th-1"
-                                                class="agregar_img_th cambiar_th_img">Camb.</button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="descr_t_art th30">
-                                    <div>
-                                        <input type="hidden" id="input_name-2" name="" value="TOMATE PELADO MIMO 390GR">
-                                        <div id="nombre_prod-2" class="titulo_t_art ch_dv_nt">
-                                            TOMATE PELADO MIMO 390GR </div>
-                                        <div class="pres_t_art span_t_art">
-                                            PRESENTACIÓN:
-                                        </div>
-                                        <div class="pres_t_art dato_t_art ch_dv_nt" id="pres_prod-2">
-                                        </div>
-                                    </div>
-                                    <div class="exhibid_dv">
-                                    </div>
-                                </td>
-
-                                <td class="exis_t_art th8">
-                                    0 unds.<br> </td>
-                                <!-- <td></td> -->
-                                <!-- <td></td> -->
-                                <td class="grupo_t_art th13">
-                                    <select id="grupo_slc-2" name="grupo_slc" class="slc_100 grupo_slc">
-                                        <option value="0">Sin Grupo</option>
-                                        <option value="4">CAFÉ Y ESPECIALIDADES</option>
-                                        <option value="10">CARNICERÍA</option>
-                                        <option value="9">CHARCUTERÍA</option>
-                                        <option value="8">CONSUMIBLES</option>
-                                        <option value="11">DESAYUNOS</option>
-                                        <option value="2">LICORES</option>
-                                        <option value="5">PIZZAS Y EXTRAS</option>
-                                        <option value="3">PLATOS</option>
-                                        <option value="7">POSTRES</option>
-                                        <option value="6">SANDWICHES Y HAMBURGUESAS</option>
-                                        <option value="1">SUPERMERCADO</option>
-                                    </select>
-                                </td>
-                                <td class="precio_t_art th12" id="td_precio-2">
-                                    <input type="hidden" name="input_precio-2">
-                                    889.700,00
                                 </td>
                             </tr>
                         </tbody>
