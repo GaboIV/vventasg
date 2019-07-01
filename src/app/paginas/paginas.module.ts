@@ -5,11 +5,13 @@ import { CompartidoModule } from '../compartido/compartido.module';
 import { FormsModule } from '@angular/forms';
 import { PAGINAS_ROUTES } from './paginas.routes';
 import { PanelPrincipalComponent } from './panel-principal/panel-principal.component';
+import { ImagenPipe } from '../tuberias/image.pipe';
 
 @NgModule({
   declarations: [
     ProductosComponent,
-    PanelPrincipalComponent
+    PanelPrincipalComponent,
+    ImagenPipe
   ],
   imports: [
     CommonModule,

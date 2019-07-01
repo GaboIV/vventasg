@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/servicios/productos/productos.service';
 import { URL_SERVICIOS } from 'src/app/config/config';
 import swal from'sweetalert2';
+import { GeneralesService } from 'src/app/servicios/generales.service';
 
 @Component({
   selector: 'app-productos',
@@ -15,15 +16,18 @@ export class ProductosComponent implements OnInit {
   paginaAnterior: string;
   total: number;
   tituloAlerta = 'Correcto';
+  selectedFile: File;
+  resultado: any;
 
   constructor(
     public _productosService: ProductosService,
+    public _generalesService: GeneralesService,
   ) { }
 
   cargarProductos(url: string) {
     this._productosService.cargarProductos( url )
       .subscribe( resp => {
-        this.productos = resp.data.data 
+        this.productos = resp.data.data; 
         this.paginaAnterior = resp.data.prev_page_url;
         this.paginaSiguiente = resp.data.next_page_url;
       });
@@ -43,6 +47,16 @@ export class ProductosComponent implements OnInit {
         title: '<span style="text-align: left">Dato actualizado correctamente: <br> ' + text + ' de producto</div>'
       });
     });
+  }
+
+  subirImagen(event, producto: any) {
+    console.log(producto);
+    this.selectedFile = event.target.files[0];
+    this._generalesService.subirImagen( producto.id, this.selectedFile, 'productos' )
+      .subscribe( res => {
+        this.resultado = res;
+        producto.imagen = this.resultado.imagen;
+      });
   }
 
   ngOnInit() {
