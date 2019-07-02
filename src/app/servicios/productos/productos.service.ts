@@ -26,6 +26,7 @@ export class ProductosService {
   }
 
   cargarProductos(url: string): any {
+    console.log(this.httpOptions);
     return this.http.get( url, this.httpOptions )
     .pipe(
       map( (resp: any) => {

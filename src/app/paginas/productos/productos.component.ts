@@ -5,6 +5,7 @@ import swal from'sweetalert2';
 import { GeneralesService } from 'src/app/servicios/generales.service';
 import { Unidad } from 'src/app/modelos/unidad.model';
 import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import { Producto } from 'src/app/modelos/producto.model';
 
 @Component({
   selector: 'app-productos',
@@ -13,7 +14,7 @@ import { typeWithParameters } from '@angular/compiler/src/render3/util';
 })
 export class ProductosComponent implements OnInit {
 
-  productos: [] = [];
+  productos: Producto[] = [];
   paginaSiguiente: string;
   paginaAnterior: string;
   total: number;
@@ -21,6 +22,8 @@ export class ProductosComponent implements OnInit {
   selectedFile: File;
   resultado: any;
   unidades: Unidad[];
+  dialog = false;
+  prodDialog: Producto = new Producto('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '') ;
 
   constructor(
     public _productosService: ProductosService,
@@ -53,6 +56,7 @@ export class ProductosComponent implements OnInit {
   actualizarProducto( producto: any, text = 'Dato'){
     this._productosService.actualizarProducto( producto )
     .subscribe( resp => {
+      this.dialog = false;
       const Toast = swal.mixin({
         toast: true,
         position: 'top-end',
@@ -98,6 +102,13 @@ export class ProductosComponent implements OnInit {
   //     }      
   //   });
   // }
+
+  mostrarDialog( producto: Producto ) {
+    this.prodDialog = producto;
+    this.dialog = true;
+  }
+
+
 
   ngOnInit() {
     this.cargarProductos(URL_SERVICIOS + '/api/productos?page=1');
