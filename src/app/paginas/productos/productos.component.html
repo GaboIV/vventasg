@@ -1,3 +1,440 @@
+<div id="fixed_dial2" class="fixed_dial" style="display: block;">
+    <div class="press" style="display: block;">
+        <div id="procesamiento"></div>
+        <div id="todo_press">
+            <div id="datos_gen_mar">
+                <div id="parte1" class="centu acticentu">
+                    Datos Generales
+                </div>
+                <div id="parte2" class="centu">
+                    Costos y Precios
+                </div>
+                <div id="parte3" class="centu">
+                    Existencias
+                </div>
+                <div id="parte4" class="centu">
+                    Operaciones
+                </div>
+            </div>
+            <form name="cant_form_9e2db" id="cant_form_9e2db" action="" method="post" enctype="multipart/form-data">
+                <div id="m_parte1" class="no_visible cada_mar si_visible">
+                    <div class="encabezado_pr">
+                        <div class="e_pr_izq">
+                            <div id="imagen1" class="fondo_imagen_th" style="">
+                                <div class="image_th ajuste_heigh">
+                                    <img src="imagen/productos/1.jpg" id="picture1">
+                                </div>
+                            </div>
+                            <div class="botones_ex_th eliminear_th">Eliminar</div>
+                            <div class="botones_ex_th_2 cambear_th">Cambiar</div>
+                        </div>
+                        <div class="e_pr_der">
+                            <input type="text" value="LECHE BEBIDA LA ZARACENA 1.8 LT ó" name="descripcion_ipt"
+                                class="modificable_ipt_pr">
+                            <div class="caja_modificable2"><span>Presentación: </span><input type="text"
+                                    class="modi_menor_ipt_pr" value="" name="presentacion_ipt"></div>
+                            <div class="caja_modificable2"><span class="">Marca: </span><select
+                                    class="modi_menor_ipt_pr maslargo" name="id_marca_slc">
+                                    <option>Sin marca</option>
+                                    <option value="2">BIMBO</option>
+                                    <option value="4">GLORIA</option>
+                                    <option value="3">PLUMROSE</option>
+                                    <option value="1">ZULIA</option>
+                                </select></div>
+                            <div class="caja_modificable2"><span>Grupo: </span><select
+                                    class="modi_menor_ipt_pr maslargo" name="id_grupo_slc">
+                                    <option value="0">Sin marca</option>
+                                    <option value="4">CAFÉ Y ESPECIALIDADES</option>
+                                    <option value="10">CARNICERÍA</option>
+                                    <option value="9">CHARCUTERÍA</option>
+                                    <option value="8">CONSUMIBLES</option>
+                                    <option value="11">DESAYUNOS</option>
+                                    <option value="2">LICORES</option>
+                                    <option value="5">PIZZAS Y EXTRAS</option>
+                                    <option value="3">PLATOS</option>
+                                    <option value="7">POSTRES</option>
+                                    <option value="6">SANDWICHES Y HAMBURGUESAS</option>
+                                    <option value="1">SUPERMERCADO</option>
+                                </select></div>
+                            <div class="caja_modificable2"><span class="dv_cajas">Exhib. en cajas: </span><select
+                                    class="modi_menor_ipt_pr maslargo" name="id_exh_caja">
+                                    <option value="0">NO</option>
+                                    <option value="1">SÍ</option>
+                                </select></div>
+                            <div class="caja_modificable2"><span class="dv_comandas">Exh. en comandas: </span><select
+                                    class="modi_menor_ipt_pr maslargo" name="id_exh_cmd">
+                                    <option value="0">NO</option>
+                                    <option value="1">SÍ</option>
+                                </select></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="m_parte2" class="no_visible cada_mar">
+                    <input type="hidden" value="9e2db" name="id_serial_form" id="id_serial_form">
+                    <input type="hidden" value="1" name="id_articulo">
+
+                    <div class="alicuota_pr">
+                        <div class="span_se_ali_pr"> Alicuota: </div>
+                        <div>
+                            <select name="alicuota">
+                                <option value="12" selected="">IVA 12%</option>
+                                <option value="10">IVA 10%</option>
+                                <option value="8">IVA 8%</option>
+                                <option value="0">EXENTO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="costos_pr">
+                        <div class="span_se_ali_pr iblock vtop costos_span_pr">
+                            Costos:
+                        </div>
+                        <div class="cuerpo_c_pr iblock vtop">
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PROMEDIO
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="costo_promedio" id="costo_promedio" class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad" class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    ANTERIOR
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="costo_anterior" class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad" class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    ACTUAL
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="costo_actual" id="costo_actual" value="1,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_costo_act" id="utilidad_costo_act" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precios_pr">
+                        <div class="span_se_ali_pr iblock vtop costos_span_pr">
+                            Precios:
+                        </div>
+                        <div class="cuerpo_c_pr iblock vtop">
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 1
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_1_final" id="precio_1_final" value="1,12"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_1" id="utilidad_p_1" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_1" id="sin_iva_1" value="1,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_1" id="impuesto_p_1" value="0,12"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 2
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_2_final" id="precio_2_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_2" id="utilidad_p_2" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_2" id="sin_iva_2" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_2" id="impuesto_p_2" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 3
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_3_final" id="precio_3_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_3" id="utilidad_p_3" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_3" id="sin_iva_3" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_3" id="impuesto_p_3" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 4
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_4_final" id="precio_4_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_4" id="utilidad_p_4" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_4" id="sin_iva_4" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_4" id="impuesto_p_4" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 5
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_5_final" id="precio_5_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_5" id="utilidad_p_5" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_5" id="sin_iva_5" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_5" id="impuesto_p_5" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 6
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_6_final" id="precio_6_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_6" id="utilidad_p_6" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_6" id="sin_iva_6" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_6" id="impuesto_p_6" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <div id="m_parte3" class="no_visible cada_mar">
+                Hola
+            </div>
+            <div id="m_parte4" class="no_visible cada_mar">
+                <div class="vtn vtn_slect" id="vtn_all">
+                    Todo
+                </div>
+                <div class="vtn" id="vtn_price">
+                    Costos y Precios
+                </div>
+                <div class="vtn" id="vtn_datos">
+                    Descripción
+                </div>
+                <div class="vtn" id="vtn_inventario">
+                    Inventario
+                </div>
+                <div class="tb_operacion">
+                    <div style="background: #efefef; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2019-06-21 03:25:23
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Presentación
+                        </div>
+                        <div class="detail_op">
+
+                        </div>
+                    </div>
+                    <div style="background: #fff; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-24 07:30:58
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Nombre
+                        </div>
+                        <div class="detail_op">
+                            LECHE BEBIDA LA ZARACENA 1.8 LT ó
+                        </div>
+                    </div>
+                    <div style="background: #efefef; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-13 10:15:04
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Nombre
+                        </div>
+                        <div class="detail_op">
+                            LECHE BEBIDA LA ZARACENA 1.8 LT
+                        </div>
+                    </div>
+                    <div style="background: #fff; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-13 10:14:56
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Nombre
+                        </div>
+                        <div class="detail_op">
+                            LECHE BEBIDA LA ZARACENA 1.8
+                        </div>
+                    </div>
+                    <div style="background: #efefef; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-13 10:14:49
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Nombre
+                        </div>
+                        <div class="detail_op">
+                            LECHE BEBIDA LA ZARACENA 1.8LT&nbsp;
+                        </div>
+                    </div>
+                    <div style="background: #fff; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-13 10:14:48
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Presentación
+                        </div>
+                        <div class="detail_op">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="botones_d_q">
+            <div id="descartar_pr_111">
+                DESCARTAR
+            </div>
+            <div id="aceptar_d_q_111">
+                ACEPTAR
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
@@ -51,7 +488,9 @@
                                 </td>
 
                                 <td class="marca_t_art th12">
-                                    <select id="marca_slc-2" name="marca_slc" class="slc_100 marca_slc" [(ngModel)]="producto.marca_id" (change)="actualizarProducto(producto, 'Marca')" [ngClass]="producto.marca_id > 0 ? 'condato' : ''">
+                                    <select id="marca_slc-2" name="marca_slc" class="slc_100 marca_slc"
+                                        [(ngModel)]="producto.marca_id" (change)="actualizarProducto(producto, 'Marca')"
+                                        [ngClass]="producto.marca_id > 0 ? 'condato' : ''">
                                         <option value="0">Sin marca</option>
                                         <option value="2">BIMBO</option>
                                         <option value="4">GLORIA</option>
@@ -64,7 +503,11 @@
                                         <label style="cursor: pointer; position: relative; height: 60px;">
                                             <img [src]="producto.imagen | imagen:'producto'" alt="" height="50px;">
                                             <br>
-                                            <input type="file" name="imagenSubir" (change)="subirImagen($event, producto)" style="display: none">
+
+
+
+                                            <input type="file" name="imagenSubir"
+                                                (change)="subirImagen($event, producto)" style="display: none">
                                         </label><br>
                                         <!-- <div class="image_th" id="image_th2">
                                             <img [src]="producto.imagen | imagen:'producto'"
@@ -97,7 +540,9 @@
                                 <!-- <td></td> -->
                                 <!-- <td></td> -->
                                 <td class="grupo_t_art th13">
-                                    <select id="grupo_slc-2" name="grupo_slc" class="slc_100 grupo_slc" [(ngModel)]="producto.grupo_id" (change)="actualizarProducto(producto, 'Grupo')" [ngClass]="producto.grupo_id > 0 ? 'condato' : ''">
+                                    <select id="grupo_slc-2" name="grupo_slc" class="slc_100 grupo_slc"
+                                        [(ngModel)]="producto.grupo_id" (change)="actualizarProducto(producto, 'Grupo')"
+                                        [ngClass]="producto.grupo_id > 0 ? 'condato' : ''">
                                         <option value="0">Sin Grupo</option>
                                         <option value="4">CAFÉ Y ESPECIALIDADES</option>
                                         <option value="10">CARNICERÍA</option>
@@ -119,8 +564,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button (click)="cargarProductos(paginaAnterior)"  >Anterior</button>
-                    <button (click)="cargarProductos(paginaSiguiente)" >Siguiente</button> 
+                    <button (click)="cargarProductos(paginaAnterior)">Anterior</button>
+                    <button (click)="cargarProductos(paginaSiguiente)">Siguiente</button>
                 </div>
             </div>
         </div>
