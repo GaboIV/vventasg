@@ -500,7 +500,7 @@
                                 </td>
                                 <td class="imagen_t_art th11">
                                     <div id="imagen2">
-                                        <label style="cursor: pointer; position: relative; height: 60px;">
+                                        <label style="cursor: pointer; position: relative;">
                                             <img [src]="producto.imagen | imagen:'producto'" alt="" height="50px;">
                                             <br>
 
@@ -509,27 +509,23 @@
                                             <input type="file" name="imagenSubir"
                                                 (change)="subirImagen($event, producto)" style="display: none">
                                         </label><br>
-                                        <!-- <div class="image_th" id="image_th2">
-                                            <img [src]="producto.imagen | imagen:'producto'"
-                                                id="picture2" class="rounded mx-auto d-block">
-                                                {{producto.imagen}}
-                                        </div>
-                                        <div class="button_img_th" id="div_botones2">
-                                            <button id="agregar_img_th-2" class="agregar_img_th">Agr.</button>
-                                        </div> -->
                                     </div>
                                 </td>
                                 <td class="descr_t_art th30">
                                     <div>
-                                        <input type="hidden" id="input_name-2" name="" value="TOMATE PELADO MIMO 390GR">
-                                        <div id="nombre_prod-2" class="titulo_t_art ch_dv_nt">{{producto.descripcion}}
+                                        <div id="nombre_prod-2" contenteditable="true" [textContent]="producto.descripcion" (blur)="verificarCambio( producto, $event.target.textContent, 'descripcion', 'Descripción')" class="titulo_t_art ch_dv_nt">{{producto.descripcion}}
                                         </div>
                                         <div class="pres_t_art span_t_art">
                                             PRESENTACIÓN:
                                         </div>
-                                        <div class="pres_t_art dato_t_art ch_dv_nt" id="pres_prod-2">
-                                            {{producto.presentacion}}
-                                        </div>
+
+                                            <div class="pres_t_art dato_t_art ch_dv_nt" id="pres_prod-2" contenteditable="true" [textContent]="producto.presentacion" (blur)="verificarCambio( producto, $event.target.textContent, 'presentacion', 'Presentación' )">
+                                                {{producto.presentacion}}
+                                            </div>
+                                            <select class="pres_t_art dato_t_art slc_t_art" id="-2" (change)="actualizarProducto(producto, 'Tipo de unidad')" [(ngModel)]="producto.unidad_id">
+                                                <option *ngFor="let unidad of unidades " value={{unidad.id}}>{{ unidad.acro_sg }}</option>
+                                            </select>
+                                       
                                     </div>
                                     <div class="exhibid_dv">
                                     </div>

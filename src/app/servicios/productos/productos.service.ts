@@ -26,7 +26,16 @@ export class ProductosService {
   }
 
   cargarProductos(url: string): any {
-    console.log(this.httpOptions);
+    return this.http.get( url, this.httpOptions )
+    .pipe(
+      map( (resp: any) => {
+        return resp;
+      })
+    );
+  }
+
+  cargarUnidades(): any {
+    const url = URL_SERVICIOS + '/api/unidades'
     return this.http.get( url, this.httpOptions )
     .pipe(
       map( (resp: any) => {
