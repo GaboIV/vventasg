@@ -707,3 +707,29 @@ padding: 4px 2px; }
 .cuadro .material-icons { font-size: 60px !important; }
 
 .dts_efectivo { display: block; }
+
+.caja_busqueda {
+    margin-left: 25%;
+    width: 33%;
+    padding: 5px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid #ff6600;
+    text-align: center;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 1.2em;
+}
+
+.boton_busqueda {
+    display: inline-block;
+    background: #ff6600;
+    height: 35px;
+    vertical-align: bottom;
+    width: 35px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-size: 1.7em;
+    color: white;
+    padding-left: 7px;
+}

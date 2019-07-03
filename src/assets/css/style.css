@@ -9618,6 +9618,10 @@ body.md-skin {
     transition: background-color 500ms linear;
     background-color: #f3f3f4;
   }
+  .press {
+    width: 100% !important;
+    left: 0 !important;
+  }
 }
 @media (max-width: 350px) {
   .timeline-item .date {
@@ -9649,6 +9653,10 @@ body.md-skin {
     float: none;
     text-align: left;
     display: inline-block;
+  }
+  .press {
+    width: 100%;
+    left: 0;
   }
 }
 /* Only demo */

@@ -447,6 +447,8 @@
             <div class="ibox ">
                 <div class="ibox-title">
                     <h5>Tabla de productos</h5>
+                    <input type="text" name="busqueda" id="busqueda" class="caja_busqueda" (keyup)="buscarProducto( $event.target.value )">
+                    <div class="boton_busqueda" ><i class="fab fa-searchengin"></i></div>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>

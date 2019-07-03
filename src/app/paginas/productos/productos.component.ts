@@ -4,7 +4,6 @@ import { URL_SERVICIOS } from 'src/app/config/config';
 import swal from'sweetalert2';
 import { GeneralesService } from 'src/app/servicios/generales.service';
 import { Unidad } from 'src/app/modelos/unidad.model';
-import { typeWithParameters } from '@angular/compiler/src/render3/util';
 import { Producto } from 'src/app/modelos/producto.model';
 
 @Component({
@@ -112,7 +111,14 @@ export class ProductosComponent implements OnInit {
     this.dialog = true;
   }
 
-
+  buscarProducto ( dato ) {
+    this._productosService.buscarProductos( dato )
+      .subscribe( res => {
+        this.resultado = res;
+        console.log(this.resultado);
+        this.productos = res;
+      });
+  }
 
   ngOnInit() {
     this.cargarProductos(URL_SERVICIOS + '/api/productos?page=1');
