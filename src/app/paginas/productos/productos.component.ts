@@ -23,7 +23,8 @@ export class ProductosComponent implements OnInit {
   resultado: any;
   unidades: Unidad[];
   dialog = false;
-  prodDialog: Producto = new Producto('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '') ;
+  modalProducto: any = [] ;
+  tempProd: Producto = new Producto('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '') ;
 
   constructor(
     public _productosService: ProductosService,
@@ -53,7 +54,9 @@ export class ProductosComponent implements OnInit {
    };
   }
 
-  actualizarProducto( producto: any, text = 'Dato'){
+  actualizarProducto( producto: any, text = 'Dato', modal = false){
+    const index = this.productos.findIndex(prod => prod.id === producto.id);
+    this.productos[index] = producto;
     this._productosService.actualizarProducto( producto )
     .subscribe( resp => {
       this.dialog = false;
@@ -104,7 +107,8 @@ export class ProductosComponent implements OnInit {
   // }
 
   mostrarDialog( producto: Producto ) {
-    this.prodDialog = producto;
+    this.tempProd = Object.assign({}, producto);
+    this.modalProducto = producto;
     this.dialog = true;
   }
 

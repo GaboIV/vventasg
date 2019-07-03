@@ -322,9 +322,7 @@
     width: 50%;
     text-align: left;
     line-height: 28px;
-    position: relative;
-    /* width: 400px; */
-    /* height: 300px; */
+    position: fixed;
     left: 25%; /*(100%-60%)/2*/
     top: 50px; }
 

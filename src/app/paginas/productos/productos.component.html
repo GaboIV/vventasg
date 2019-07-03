@@ -29,14 +29,14 @@
                             <div class="botones_ex_th_2 cambear_th">Cambiar</div>
                         </div>
                         <div class="e_pr_der" style="width: 70%;">
-                            <input type="text" [value]="prodDialog.descripcion" [(ngModel)]="prodDialog.descripcion" name="descripcion_ipt"
+                            <input type="text" [value]="tempProd.descripcion" [(ngModel)]="tempProd.descripcion" name="descripcion_ipt"
                                 class="modificable_ipt_pr rounded">
                             <div class="caja_modificable2">
                                 <span>Presentación: </span>
                                 <input type="text" class="modi_menor_ipt_pr rounded" value="" name="presentacion_ipt">
                             </div>
                             <div class="caja_modificable2"><span class="">Tipo de unidad: </span><select
-                                class="modi_menor_ipt_pr maslargo" name="id_marca_slc" [(ngModel)]="prodDialog.unidad_id">
+                                class="modi_menor_ipt_pr maslargo" name="id_marca_slc" [(ngModel)]="tempProd.unidad_id">
                                 <option *ngFor="let unidad of unidades " value={{unidad.id}}>{{ unidad.descripcion_sg }}</option>
                             </select></div>
                             <div class="caja_modificable2"><span class="">Marca: </span><select
@@ -434,7 +434,7 @@
             <div id="descartar_pr_111" (click)="dialog = false">
                 DESCARTAR
             </div>
-            <div id="aceptar_d_q_111" (click)="actualizarProducto(prodDialog, 'Información')">
+            <div id="aceptar_d_q_111" (click)="actualizarProducto(tempProd, 'Información', true)">
                 ACEPTAR
             </div>
         </div>
