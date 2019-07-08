@@ -5,6 +5,8 @@ import swal from'sweetalert2';
 import { GeneralesService } from 'src/app/servicios/generales.service';
 import { Unidad } from 'src/app/modelos/unidad.model';
 import { Producto } from 'src/app/modelos/producto.model';
+import { Marca } from 'src/app/modelos/marca.model';
+import { Grupo } from 'src/app/modelos/grupo.model';
 
 @Component({
   selector: 'app-productos',
@@ -21,6 +23,8 @@ export class ProductosComponent implements OnInit {
   selectedFile: File;
   resultado: any;
   unidades: Unidad[];
+  marcas: Marca[];
+  grupos: Grupo[];
   dialog = false;
   modalProducto: any = [] ;
   tempProd: Producto = new Producto('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '') ;
@@ -43,6 +47,20 @@ export class ProductosComponent implements OnInit {
     this._productosService.cargarUnidades()
     .subscribe( resp => {
       this.unidades = resp.data.data;
+    })
+  }
+
+  cargarMarcas(){
+    this._productosService.cargarMarcas()
+    .subscribe( resp => {
+      this.marcas = resp.data.data;
+    })
+  }
+
+  cargarGrupos(){
+    this._productosService.cargarGrupos()
+    .subscribe( resp => {
+      this.grupos = resp.data.data;
     })
   }
 
@@ -123,6 +141,8 @@ export class ProductosComponent implements OnInit {
   ngOnInit() {
     this.cargarProductos(URL_SERVICIOS + '/api/productos?page=1');
     this.cargarUnidades();
+    this.cargarMarcas();
+    this.cargarGrupos();
   }
 
 }

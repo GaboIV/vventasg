@@ -60,7 +60,6 @@ export class ProductosService {
   }
 
   actualizarProducto(producto: any): any {
-
     const url = URL_SERVICIOS + '/api/productos/' + producto.id;
     return this.http.put( url, producto, this.httpOptions )
     .pipe(
@@ -69,4 +68,25 @@ export class ProductosService {
       })
     );
   }
+
+  cargarMarcas(): any {
+    const url = URL_SERVICIOS + '/api/marcas';
+    return this.http.get( url, this.httpOptions )
+    .pipe(
+      map( (resp: any) => {
+        return resp;
+      })
+    );
+  }
+
+  cargarGrupos(): any {
+    const url = URL_SERVICIOS + '/api/grupos';
+    return this.http.get( url, this.httpOptions )
+    .pipe(
+      map( (resp: any) => {
+        return resp;
+      })
+    );
+  }
+
 }
