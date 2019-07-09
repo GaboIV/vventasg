@@ -27,7 +27,7 @@ export class ProductosComponent implements OnInit {
   grupos: Grupo[];
   dialog = false;
   modalProducto: any = [] ;
-  tempProd: Producto = new Producto('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '') ;
+  tempProd: Producto = new Producto('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '') ;
 
   constructor(
     public _productosService: ProductosService,
@@ -73,9 +73,11 @@ export class ProductosComponent implements OnInit {
 
   actualizarProducto( producto: any, text = 'Dato', modal = false){
     const index = this.productos.findIndex(prod => prod.id === producto.id);
-    this.productos[index] = producto;
+
+    console.log(producto);
     this._productosService.actualizarProducto( producto )
     .subscribe( resp => {
+      this.productos[index] = resp;
       this.dialog = false;
       const Toast = swal.mixin({
         toast: true,
@@ -125,6 +127,16 @@ export class ProductosComponent implements OnInit {
 
   mostrarDialog( producto: Producto ) {
     this.tempProd = Object.assign({}, producto);
+    if (this.tempProd.productoscomanda === null) {
+      this.tempProd.productoscomanda = {
+        status: 0
+      };
+    }
+    if (this.tempProd.productocaja === null) {
+      this.tempProd.productocaja = {
+        status: 0
+      };
+    }
     this.modalProducto = producto;
     this.dialog = true;
   }

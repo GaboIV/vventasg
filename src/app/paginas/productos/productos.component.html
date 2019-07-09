@@ -46,13 +46,11 @@
                                 <select class="modi_menor_ipt_pr maslargo" name="id_grupo_slc" [(ngModel)]="tempProd.grupo_id">
                                     <option *ngFor="let grupo of grupos " value={{grupo.id}}>{{ grupo.descripcion }}</option>
                                 </select></div>
-                            <div class="caja_modificable2"><span class="dv_cajas">Exhibición en cajas: </span><select
-                                    class="modi_menor_ipt_pr maslargo" name="id_exh_caja">
+                            <div class="caja_modificable2"><span class="dv_cajas">Exhibición en cajas: </span><select class="modi_menor_ipt_pr maslargo" name="id_exh_caja" [(ngModel)]="tempProd.productocaja.status">
                                     <option value="0">NO</option>
                                     <option value="1">SÍ</option>
                                 </select></div>
-                            <div class="caja_modificable2"><span class="dv_comandas">Exhibición en comandas: </span><select
-                                    class="modi_menor_ipt_pr maslargo" name="id_exh_cmd">
+                            <div class="caja_modificable2"><span class="dv_comandas">Exhibición en comandas: </span><select class="modi_menor_ipt_pr maslargo" name="id_exh_cmd" [(ngModel)]="tempProd.productoscomanda.status">
                                     <option value="0">NO</option>
                                     <option value="1">SÍ</option>
                                 </select></div>
