@@ -5,22 +5,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { CompartidoModule } from './compartido/compartido.module';
-import { PaginasComponent } from './paginas/paginas.component';
+import { SharedModule } from './shared/shared.module';
 import { APP_ROUTES } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PaginasComponent
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    CompartidoModule,
+    SharedModule,
     HttpClientModule,
     APP_ROUTES
   ],

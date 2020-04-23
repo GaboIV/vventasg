@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../servicios/usuarios/usuario.service';
+import { UserService } from '../services/users/user.service';
 import { NgForm } from '@angular/forms';
-import { Usuario } from '../modelos/usuario.model';
+import { User } from '../models/user.model';
 import { Title } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/common';
 
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public router: Router,
-    public _usuarioService: UsuarioService,
+    public _userService: UserService,
     public title: Title,
     @Inject(DOCUMENT) private document: Document
   ) { }
@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    let usuario = new Usuario(null, null, forma.value.nick, forma.value.password );
+    let usuario = new User(null, null, forma.value.nick, forma.value.password );
 
-    this._usuarioService.login( usuario )
-                  .subscribe( correcto => this.router.navigate(['/'])  );
-
+    this._userService.login( usuario )
+    .subscribe( 
+      correcto => this.router.navigate(['/']) 
+    );
   }
-
 }

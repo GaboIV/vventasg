@@ -1,0 +1,537 @@
+<div id="fixed_dial2" class="fixed_dial" style="display: block;" *ngIf="dialog === true">
+    <div class="press" style="display: block;">
+        <div id="procesamiento"></div>
+        <div id="todo_press">
+            <div id="datos_gen_mar">
+                <div id="parte1" class="centu acticentu">
+                    Datos Generales
+                </div>
+                <div id="parte2" class="centu">
+                    Costos y Precios
+                </div>
+                <div id="parte3" class="centu">
+                    Existencias
+                </div>
+                <div id="parte4" class="centu">
+                    Operaciones
+                </div>
+            </div>
+            <form name="cant_form_9e2db" id="cant_form_9e2db" action="" method="post" enctype="multipart/form-data">
+                <div id="m_parte1" class="no_visible cada_mar si_visible" style="width: 100%;">
+                    <div class="encabezado_pr">
+                        <div class="e_pr_izq">
+                            <div id="imagen1" class="fondo_imagen_th" style="">
+                                <div class="image_th ajuste_heigh">
+                                    <img [src]="tempProd.imagen | imagen:'producto'" id="picture1">
+                                </div>
+                            </div>
+                            <div class="botones_ex_th eliminear_th">Eliminar</div>
+                            <div class="botones_ex_th_2 cambear_th">Cambiar</div>
+                        </div>
+                        <div class="e_pr_der" style="width: 70%;">
+                            <input type="text" [value]="tempProd.description" [(ngModel)]="tempProd.description" name="descripcion_ipt"
+                                class="modificable_ipt_pr rounded">
+                            <div class="caja_modificable2">
+                                <span>Presentación: </span>
+                                <input type="text" class="modi_menor_ipt_pr rounded" value="" [value]="tempProd.presentacion" [(ngModel)]="tempProd.presentacion" name="presentacion_ipt">
+                            </div>
+                            <div class="caja_modificable2"><span class="">Tipo de unidad: </span><select class="modi_menor_ipt_pr maslargo" name="id_marca_slc" [(ngModel)]="tempProd.unidad_id">
+                                <option *ngFor="let unidad of unidades " value={{unidad.id}}>{{ unidad.descripcion_sg }}</option>
+                            </select></div>
+                            <div class="caja_modificable2"><span class="">Marca: </span><select class="modi_menor_ipt_pr maslargo" name="id_marca_slc" [(ngModel)]="tempProd.marca_id">
+                                    <option *ngFor="let marca of marcas " value={{marca.id}}>{{ marca.descripcion }}</option>
+                                </select></div>
+                            <div class="caja_modificable2">
+                                <span>Grupo: </span>
+                                <select class="modi_menor_ipt_pr maslargo" name="id_grupo_slc" [(ngModel)]="tempProd.grupo_id">
+                                    <option *ngFor="let grupo of grupos " value={{grupo.id}}>{{ grupo.descripcion }}</option>
+                                </select></div>
+                            <div class="caja_modificable2"><span class="dv_cajas">Exhibición en cajas: </span><select class="modi_menor_ipt_pr maslargo" name="id_exh_caja" [(ngModel)]="tempProd.productocaja.status">
+                                    <option value="0">NO</option>
+                                    <option value="1">SÍ</option>
+                                </select></div>
+                            <div class="caja_modificable2"><span class="dv_comandas">Exhibición en comandas: </span><select class="modi_menor_ipt_pr maslargo" name="id_exh_cmd" [(ngModel)]="tempProd.productoscomanda.status">
+                                    <option value="0">NO</option>
+                                    <option value="1">SÍ</option>
+                                </select></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="m_parte2" class="no_visible cada_mar">
+                    <input type="hidden" value="9e2db" name="id_serial_form" id="id_serial_form">
+                    <input type="hidden" value="1" name="id_articulo">
+
+                    <div class="alicuota_pr">
+                        <div class="span_se_ali_pr"> Alicuota: </div>
+                        <div>
+                            <select name="alicuota">
+                                <option value="12" selected="">IVA 12%</option>
+                                <option value="10">IVA 10%</option>
+                                <option value="8">IVA 8%</option>
+                                <option value="0">EXENTO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="costos_pr">
+                        <div class="span_se_ali_pr iblock vtop costos_span_pr">
+                            Costos:
+                        </div>
+                        <div class="cuerpo_c_pr iblock vtop">
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PROMEDIO
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="costo_promedio" id="costo_promedio" class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad" class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    ANTERIOR
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="costo_anterior" class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad" class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    ACTUAL
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="costo_actual" id="costo_actual" value="1,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_costo_act" id="utilidad_costo_act" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precios_pr">
+                        <div class="span_se_ali_pr iblock vtop costos_span_pr">
+                            Precios:
+                        </div>
+                        <div class="cuerpo_c_pr iblock vtop">
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 1
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_1_final" id="precio_1_final" value="1,12"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_1" id="utilidad_p_1" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_1" id="sin_iva_1" value="1,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_1" id="impuesto_p_1" value="0,12"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 2
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_2_final" id="precio_2_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_2" id="utilidad_p_2" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_2" id="sin_iva_2" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_2" id="impuesto_p_2" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 3
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_3_final" id="precio_3_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_3" id="utilidad_p_3" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_3" id="sin_iva_3" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_3" id="impuesto_p_3" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 4
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_4_final" id="precio_4_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_4" id="utilidad_p_4" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_4" id="sin_iva_4" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_4" id="impuesto_p_4" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 5
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_5_final" id="precio_5_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_5" id="utilidad_p_5" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_5" id="sin_iva_5" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_5" id="impuesto_p_5" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                            <div class="title_inputs">
+                                <div class="subtitle_span iblock w30">
+                                    PRECIO 6
+                                </div>
+                                <div class="subtitle_span iblock w20">
+                                    UTILIDAD
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    SIN IMPUESTOS
+                                </div>
+                                <div class="subtitle_span iblock w30">
+                                    IMPUESTO
+                                </div>
+                            </div>
+                            <div class="body_inputs">
+                                <div class="w30 iblock">
+                                    <input type="text" name="precio_6_final" id="precio_6_final" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w20 iblock">
+                                    <input type="text" name="utilidad_p_6" id="utilidad_p_6" value="0,00"
+                                        class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="sin_iva_6" id="sin_iva_6" value="0,00" class="number">
+                                </div>
+                                <div class="w30 iblock">
+                                    <input type="text" name="impuesto_p_6" id="impuesto_p_6" value="0,00"
+                                        class="number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <div id="m_parte3" class="no_visible cada_mar">
+                Hola
+            </div>
+            <div id="m_parte4" class="no_visible cada_mar">
+                <div class="vtn vtn_slect" id="vtn_all">
+                    Todo
+                </div>
+                <div class="vtn" id="vtn_price">
+                    Costos y Precios
+                </div>
+                <div class="vtn" id="vtn_datos">
+                    Descripción
+                </div>
+                <div class="vtn" id="vtn_inventario">
+                    Inventario
+                </div>
+                <div class="tb_operacion">
+                    <div style="background: #efefef; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2019-06-21 03:25:23
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Presentación
+                        </div>
+                        <div class="detail_op">
+
+                        </div>
+                    </div>
+                    <div style="background: #fff; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-24 07:30:58
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Nombre
+                        </div>
+                        <div class="detail_op">
+                            LECHE BEBIDA LA ZARACENA 1.8 LT ó
+                        </div>
+                    </div>
+                    <div style="background: #efefef; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-13 10:15:04
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Nombre
+                        </div>
+                        <div class="detail_op">
+                            LECHE BEBIDA LA ZARACENA 1.8 LT
+                        </div>
+                    </div>
+                    <div style="background: #fff; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-13 10:14:56
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Nombre
+                        </div>
+                        <div class="detail_op">
+                            LECHE BEBIDA LA ZARACENA 1.8
+                        </div>
+                    </div>
+                    <div style="background: #efefef; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-13 10:14:49
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Nombre
+                        </div>
+                        <div class="detail_op">
+                            LECHE BEBIDA LA ZARACENA 1.8LT&nbsp;
+                        </div>
+                    </div>
+                    <div style="background: #fff; width: 100%;" class="vtn_to  vtn_datos_to ">
+                        <div class="fecha_op">
+                            2017-12-13 10:14:48
+                        </div>
+                        <div class="desc_op">
+                            Modificación de Presentación
+                        </div>
+                        <div class="detail_op">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="botones_d_q">
+            <div id="descartar_pr_111" (click)="dialog = false">
+                DESCARTAR
+            </div>
+            <div id="aceptar_d_q_111" (click)="actualizarProducto(tempProd, 'Información', true)">
+                ACEPTAR
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Tabla de productos</h5>
+                    <input type="text" name="busqueda" id="busqueda" class="caja_busqueda" (keyup)="buscarProducto( $event.target.value )">
+                    <div class="boton_busqueda" ><i class="fab fa-searchengin"></i></div>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#" class="dropdown-item">Config option 1</a>
+                            </li>
+                            <li><a href="#" class="dropdown-item">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <table class="table table-striped tabla_general" style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th class="th14">Código</th>
+                                <th class="th13">Marca</th>
+                                <th class="th12">Imagen</th>
+                                <th class="th27">Descripción</th>
+                                <th class="th8">Existencia</th>
+                                <th class="th13">Grupo</th>
+                                <th style="text-align: center" class="th13">Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let prod of products">
+                                <!-- <td class="id_t_art">2</td> -->
+                                <td class="codigo_t_art th14">
+                                    <div class="opciones_c_t_a funciones" id="delete_prod-2">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="id_t_art">
+                                        #{{prod.id}}
+                                    </div>
+                                    <div class="text_cod_art">
+                                        {{prod.code}} </div>
+                                </td>
+
+                                <td class="marca_t_art th12">
+                                    <select name="brand" class="slc_100 marca_slc" [(ngModel)]="prod.brand_id" (change)="updateProduct(prod, 'Marca')" [ngClass]="prod.brand_id > 0 ? 'condato' : ''">
+                                        <option *ngFor="let brand of brands " value={{brand.id}}>{{ brand.description }}</option>
+                                    </select>
+                                </td>
+                                <td class="imagen_t_art th11">
+                                    <div id="imagen2">
+                                        <label style="cursor: pointer; position: relative;">
+                                            <img [src]="prod.image_url" alt="" height="50px;">
+                                            <br>
+                                            <input type="file" name="imagenSubir"
+                                                (change)="subirImagen($event, prod)" style="display: none">
+                                        </label><br>
+                                    </div>
+                                </td>
+                                <td class="descr_t_art th30">
+                                    <div>
+                                        <div id="nombre_prod-2" contenteditable="true" [textContent]="prod.description" (blur)="verificarCambio( prod, $event.target.textContent, 'description', 'Descripción')" class="titulo_t_art ch_dv_nt">{{prod.description}}
+                                        </div>
+                                        <div class="pres_t_art span_t_art">
+                                            PRESENTACIÓN:
+                                        </div>
+                                            <div class="pres_t_art dato_t_art ch_dv_nt" id="pres_prod-2" contenteditable="true" [textContent]="prod.presentation" (blur)="verificarCambio( prod, $event.target.textContent, 'presentation', 'Presentación' )">
+                                                {{prod.presentation}}
+                                            </div>
+                                            <select class="pres_t_art dato_t_art slc_t_art" id="-2" (change)="actualizarProducto(prod, 'Tipo de unidad')" [(ngModel)]="prod.unit_id">
+                                                <option *ngFor="let unit of units " value={{unit.id}}>{{ unit.description_sg }}</option>
+                                            </select>
+                                       
+                                    </div>
+                                    <div class="exhibid_dv">
+                                    </div>
+                                </td>
+
+                                <td class="exis_t_art th8">
+                                    0 unds.<br> </td>
+                                <!-- <td></td> -->
+                                <!-- <td></td> -->
+                                <td class="grupo_t_art th13">
+                                    <select id="grupo_slc-2" name="grupo_slc" class="slc_100 grupo_slc"
+                                        [(ngModel)]="prod.group_id" (change)="updateProduct(prod, 'Grupo')"
+                                        [ngClass]="prod.group_id > 0 ? 'condato' : ''">
+                                        <option *ngFor="let group of groups " value={{group.id}}>{{ group.description }}</option>
+                                    </select>
+                                </td>
+                                <td class="precio_t_art th12" id="td_precio-2" (click)="mostrarDialog(prod)">
+                                    <input type="hidden" name="input_precio-2">
+                                    {{prod.prize_1 | number:'1.2'}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button (click)="cargarProductos(paginaAnterior)">Anterior</button>
+                    <button (click)="cargarProductos(paginaSiguiente)">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
